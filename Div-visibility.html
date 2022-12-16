@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #232323;
+        }
+
+        #div {
+            color: #fafafa;
+            display: flex;
+            flex-direction: column;
+            padding: 25px 10px;
+            background-color: #2b463d;
+            border: 0.2px solid #237a4d;
+            box-shadow: 0 4px 8px #237a4d, 0 6px 20px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        #india {
+            margin: 0;
+            font-family: 'Capriola', sans-serif;
+            font-size: 2rem;
+
+        }
+
+        .city {
+            display: none;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        #hide {
+            border: .5px solid #232323;
+            color: #aaf7cf;
+            width: 100px;
+            height: 30px;
+            font-size: .9em;
+            font-weight: bold;
+            background-color: transparent;
+            cursor: pointer;
+            position: relative;
+        }
+
+        #hide::after {
+            content: '';
+            position: absolute;
+            background: #237a4d;
+            width: 100%;
+            height: 0.175rem;
+            left: 0;
+            bottom: 0;
+        }
+
+        #hide::after {
+            transform: scale(0, 1);
+            transition: transform 0.3s ease;
+        }
+
+        #hide:hover::after {
+            transform: scale(1, 1);
+        }
+    </style>
+</head>
+
+<body style="width: 50%;">
+
+    <div id="div">
+
+        <h2 id="india" onmouseover="displayResult()" onmouseleave="previousResult()">India</h2>
+        <br>
+
+        <div style="font-family: 'Amita', cursive;">A unique land of vibrant colours, breathtaking landscapes and rich
+            history, India is unlike any other. </div>
+
+        <p class="city">One of the oldest civilisations in the world, India is a mosaic of multicultural experiences.
+            With a
+            rich heritage and myriad attractions, the country is among the most popular tourist destinations in the
+            world.
+        </p>
+        <div class="city">Fringed by the Great Himalayas in the north, it stretches southwards and at the Tropic of
+            Cancer,
+            tapers off into the Indian Ocean between the Bay of Bengal on the east and the Arabian Sea on the west.
+        </div>
+        <br>
+
+        <button id="hide" onclick="myFunction()">More Info</button>
+
+    </div>
+
+
+
+    <script>
+
+        function displayResult() {
+            document.getElementById("india").innerHTML = "Incredible India !";
+        }
+        function previousResult() {
+            document.getElementById("india").innerHTML = "India";
+        }
+        function myFunction() {
+            var x = document.getElementsByClassName("city");
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.display = "block";
+            }
+            var y = document.getElementById('hide').innerHTML = "Show Less";
+
+        }
+    </script>
+
+</body>
+
+</html>
